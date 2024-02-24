@@ -1,21 +1,38 @@
 .btn {
-    @apply font-bold py-2 px-4 rounded;
-  }
-  .btn-blue {
-    @apply bg-blue-500 text-white;
-  }
-  .btn-blue:hover {
-    @apply bg-blue-700;
-  }
-  .btn-green{
-    @apply bg-green-500 text-white;
-  }
-  .btn-green:hover{
-    @apply bg-green-700;
-  }
-  .btn-red{
-    @apply bg-red-500 text-white;
-  }
-  .btn-red:hover{
-    @apply bg-red-700;
-  }
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+.btn-green{
+  @apply bg-green-500 text-white;
+}
+.btn-green:hover{
+  @apply bg-green-700;
+}
+.btn-red{
+  @apply bg-red-500 text-white;
+}
+
+.btn-colorTeclado{
+  @apply bg-red-500 text-white;
+}
+.btn-red:hover{
+  @apply bg-red-700;
+}
+.btn-container{
+  @apply container mx-auto px-5 py-5 bg-gray-500 w-60 h-full; 
+
+}
+.screen{
+  @apply bg-green-300 py-10 px-4 rounded h-60;
+}
+.teclado{
+  @apply bg-green-300 py-2 px-4 rounded h-60 mt-6;
+}
+.grid-container{
+  @apply grid grid-cols-3 gap-2 mt-2;
+}
