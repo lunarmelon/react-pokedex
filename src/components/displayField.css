@@ -1,0 +1,16 @@
+.display-field {
+    @apply
+    bg-red-300
+    w-64
+    h-10
+    border
+    rounded-md
+    px-3
+    py-2
+    mt-2
+    ml-3.5
+    flex
+    justify-center
+    items-center
+    whitespace-nowrap
+}

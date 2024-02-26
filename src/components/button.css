@@ -1,21 +1,41 @@
 .btn {
-    @apply font-bold py-2 px-4 rounded;
-  }
-  .btn-blue {
-    @apply bg-blue-500 text-white;
-  }
-  .btn-blue:hover {
-    @apply bg-blue-700;
-  }
-  .btn-green{
-    @apply bg-green-500 text-white;
-  }
-  .btn-green:hover{
-    @apply bg-green-700;
+    @apply font-bold py-2 px-4 rounded text-center;
   }
   .btn-red{
-    @apply bg-red-500 text-white;
+    @apply bg-red-500 text-white shadow-md;
   }
   .btn-red:hover{
-    @apply bg-red-700;
+    @apply bg-red-600;
+  }
+  .btn-side{
+    @apply bg-blue-950 font-medium text-white rounded-sm w-32 h-6 flex items-center justify-center cursor-pointer
+    mt-2 right-11;
+  }
+  .btn-side:hover{
+    @apply bg-blue-900;
+  }
+  .pokedex-container{
+    @apply container mx-auto px-5 py-5 bg-red-800 w-80 h-full rounded-xl relative; 
+    flex: 1;
+  }
+  .hidden {
+    display: none;
+  }
+  .bigger-pokedex-container{
+    @apply container px-5 py-5 bg-gray-700 h-full rounded-xl relative; 
+    width: 360px;
+  }
+  .pokedex-wrapper{
+    @apply container relative justify-center;
+    display: flex;
+  }
+  .screen{
+    @apply bg-green-300 py-10 px-4 rounded h-60 mt-2;
+  }
+  .screen-big{
+    @apply bg-green-300 py-10 px-4 rounded mt-2;
+    height: 530px;
+  }
+  .grid-container{
+    @apply grid grid-cols-3 gap-2 mt-2;
   }
