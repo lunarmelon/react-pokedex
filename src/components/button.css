@@ -30,7 +30,7 @@
     display: flex;
   }
   .screen{
-    @apply bg-green-300 py-10 px-4 rounded h-60 mt-2;
+    @apply bg-green-300 py-5 px-4 rounded h-60 mt-2;
   }
   .screen-big{
     @apply bg-green-300 py-10 px-4 rounded mt-2;

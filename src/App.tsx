@@ -6,10 +6,18 @@ import DisplayField from './components/DisplayField';
 import './components/pokeball.css';
 
 import './components/button.css';
+import {PokeApi} from './api/PokeApi';
+import PokemonComponent from './components/Pokemon';
+import {Pokemon} from './models/Pokemon';
+import PokeInfoComponent from './components/PokeInfo';
 
 function App() {
   const [displayValue, setDisplayValue] = useState('');
   const [isSecondScreenVisible, setSecondScreenToggle] = useState(false);
+  const [pokemonNumber, setPokemonNumber] = React.useState<string|undefined>(undefined);
+  const [pokemon,setPokemon]=React.useState<Pokemon|undefined>(undefined);
+  const [loading,setLoading]=React.useState<boolean>(false);
+  const [error,setError]=React.useState<string|undefined>(undefined);
 
   const handleClick = (buttonValue: string) => {
     if (displayValue.length < 3) {
@@ -25,6 +33,23 @@ function App() {
     setSecondScreenToggle(!isSecondScreenVisible);
   };
 
+
+
+
+  function buscar(){
+    setLoading(true);
+    setError(undefined);
+    PokeApi.getPokemonById(displayValue).then((response)=>{
+      setPokemon(response.data);
+      setLoading(false);
+    }).catch((error)=>{
+      console.log(error)
+      setLoading(false);
+      setError("Pokemon no encontrado");
+    });
+  }
+
+
   return (
     <div className="App">
       <div className='pokedex-wrapper'>
@@ -35,7 +60,13 @@ function App() {
                   <div className='pokeball__button'></div>
                   <div className='pokeball__button'></div>
               </button>
-              <div className='screen'></div>
+              <div className='screen'>
+                
+                {(!loading && pokemon &&!error) && <>
+                  <PokemonComponent pokemon={pokemon}></PokemonComponent>
+                </>}
+                {error && <p>{error}</p>}
+              </div>
               <div>
                 <DisplayField value={displayValue}></DisplayField>
               </div>
@@ -51,7 +82,7 @@ function App() {
                 <Button label="9" onClick={() => handleClick('9')}></Button>
                 <Button label="0" onClick={() => handleClick('0')}></Button>
                 <Button label="Clear" onClick={handleErase}></Button>
-                <Button label="Enter" onClick={handleErase}></Button>
+                <Button label="Enter" onClick={buscar}></Button>
               </div>
             </div>
           </div>
@@ -60,7 +91,12 @@ function App() {
           <div className='bigger-pokedex-container'>
             <div className="pokedex-container">
               <div className='pokedex-content'>
-                <div className='screen-big'></div>
+                <div className='screen-big'>
+                  {(!loading && pokemon &&!error) && <>
+                    <PokeInfoComponent pokemon={pokemon}></PokeInfoComponent>
+                  </>}
+                  {error && <p>{error}</p>}
+                </div>
               </div>
             </div>
           </div>
