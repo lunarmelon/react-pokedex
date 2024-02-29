@@ -2,12 +2,9 @@ import React from 'react';
 import { Pokemon } from '../models/Pokemon';
 import './Pokemon.css'
 
-
 interface PokeInfoProps{
     pokemon:Pokemon;
 }
-
-
 
 export default function PokeInfoComponent(props:PokeInfoProps){
     return(

@@ -9,6 +9,7 @@ export interface Pokemon{
             }
         }
     }
+    flavor_text_entries:FlavorText[];
 }
 
 interface Ability{
@@ -16,4 +17,8 @@ interface Ability{
         name:string;
         url:string;
     }
+}
+
+interface FlavorText{
+    flavor_text:string;
 }

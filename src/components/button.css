@@ -24,6 +24,7 @@
   .bigger-pokedex-container{
     @apply container px-5 py-5 bg-gray-700 h-full rounded-xl relative; 
     width: 360px;
+
   }
   .pokedex-wrapper{
     @apply container relative justify-center;
@@ -35,6 +36,7 @@
   .screen-big{
     @apply bg-green-300 py-10 px-4 rounded mt-2;
     height: 530px;
+    overflow-y: auto;
   }
   .grid-container{
     @apply grid grid-cols-3 gap-2 mt-2;
